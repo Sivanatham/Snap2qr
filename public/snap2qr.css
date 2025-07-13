@@ -1,0 +1,143 @@
+body{
+    margin:0px;
+    padding:0px;
+    background-color: antiquewhite;
+}
+@font-face {
+    font-family: myFirstFont;
+    src: url(fonts/Honey\ Salt.otf) format('truetype');
+    }
+@font-face{
+    font-family: mysecond;
+    src: url(fonts/Wakanda4Ever-gxg5p.ttf) format('truetype');
+}
+@font-face{
+    font-family: mythird;
+    src: url(fonts/Wakanda4Ever-gxg5p.ttf) format('truetype');
+}@font-face{
+    font-family: myfour;
+    src: url(fonts/BoostPlayer_PERSONAL_USE_ONLY.otf) format('truetype');
+}@font-face{
+    font-family: myfive;
+    src: url(fonts/SacrificeDemo-8Ox1B.ttf) format('truetype');
+}
+#header{
+    margin-top: 0px;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top:0px;
+    background-color:rgb(22, 51, 40);
+    font-size:20px;
+    font-weight:bold;
+    text-align:left;
+    border: 1px solid #000000;
+    box-shadow: #000000 0px 0px 9px;
+    z-index: 2;
+    #t1{
+        font-size: 60px;
+        font-weight: bold;
+        color:wheat;
+        font-display: swap;
+        font-stretch: semi-condensed;
+        position: absolute;
+        left:200px;
+        margin:0px;
+        padding:10px 0px 0px 0px;
+        font-family: 'Times New Roman', Times, serif
+    }
+    #login{
+        /* border: 2px solid #000000; */
+        font-size: 30px;
+        font-weight: bold;
+        color:wheat;
+        font-display: swap;
+        font-stretch: semi-condensed;
+        position: absolute;
+        left:1000px;
+        margin-top:30px;
+        padding:0px 0px 0px 0px;
+        font-family: 'Times New Roman', Times, serif;
+        text-decoration: none;
+        width:auto;
+        height:45px;
+    }
+    #login:hover{
+        background-color: rgb(22, 51, 40);
+        color:wheat;
+        text-decoration: none;
+        border-radius: 5px;
+        box-shadow: #000000 0px 0px 9px;
+    }
+    h2{
+        font-size:40px;
+        font-weight: bold;
+        color: wheat;
+        position: absolute;
+        right: 250px;
+        margin-top: 30px;
+        font-family: myFirstFont;
+        word-spacing: 20px;
+    }
+
+}
+#stored-image{
+        display:block;  
+        width: 450px ; 
+        height: 330px; 
+        position: relative; 
+        left:800px;
+        bottom: 30px;
+        margin-top: 0px; 
+        top:40px;
+        border: 2px double rgb(22, 51, 40);
+        /* background-color: blue; */
+}
+#video{
+    position: relative;
+    left:20px;
+    margin-top: 50px;
+    width: 590px;
+    height: auto;
+}
+#username{
+    font-size: 30px;
+    font-weight: bold;
+    color:wheat;
+    font-display: swap;
+    font-stretch: semi-condensed;
+    position: absolute;
+    right:90px;
+    margin-top:200px;
+    padding:0px 0px 0px 0px;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    width:auto;
+    height:45px;
+    background-color:rgb(22, 51, 40);
+    box-shadow: #000000 0px 0px 30px;
+}
+#snap{
+    font-size: 30px;
+    font-weight: bold;
+    color:wheat;
+    font-display: swap;
+    font-stretch: semi-condensed;
+    position: absolute;
+    right:150px;
+    margin-top:300px;
+    padding:0px 0px 0px 0px;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    width:200px;
+    height:45px;
+    background-color:rgb(22, 51, 40);
+    box-shadow: #000000 0px 0px 30px;
+}
+#snap:hover{
+    background-color: rgb(12, 132, 86);
+    color:wheat;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: #000000 0px 0px 9px;
+}

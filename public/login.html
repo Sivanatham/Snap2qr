@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snap2qr</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <h1>Welcome to Snap2QR</h1>
+    <div class="container">
+        <h2 id="form-title">Login</h2>
+        <form id="authForm">
+            <input type="text" id="username" placeholder="Username" required>
+
+            <!-- Email field visible only in Register section -->
+            <div id="email-field" style="display: none;">
+                <input type="email" id="email" placeholder="Email" required>
+            </div>
+
+            <div style="position: relative;">
+                <input type="password" id="password" placeholder="Password" required>
+                <i class="fa-solid fa-eye-slash" id="togglePassword" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
+            </div>
+
+            <button type="submit" id="submit-btn">Login</button>
+
+            <p id="toggle-text">Don't have an account? <a href="#" id="toggle-link">Register</a></p>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleLink = document.getElementById("toggle-link");
+            const formTitle = document.getElementById("form-title");
+            const submitBtn = document.getElementById("submit-btn");
+            const emailField = document.getElementById("email-field");
+            const toggleText = document.getElementById("toggle-text");
+            const passwordInput = document.getElementById("password");
+            const usernameInput = document.getElementById("username");
+            const toggleBtn = document.getElementById("togglePassword");
+
+            let isSignup = false;
+
+            // Toggle between login and register
+            toggleLink.addEventListener("click", function (e) {
+                e.preventDefault();
+                isSignup = !isSignup;
+
+                formTitle.textContent = isSignup ? "Register" : "Login";
+                submitBtn.textContent = isSignup ? "Register" : "Login";
+
+                // Show or hide email field based on form type
+                emailField.style.display = isSignup ? "block" : "none";
+
+                toggleText.innerHTML = isSignup
+                    ? 'Already have an account? <a href="#" id="toggle-link">Login</a>'
+                    : 'Don\'t have an account? <a href="#" id="toggle-link">Register</a>';
+
+                // Reattach the event listener for the new "toggle-link"
+                updateToggleLink();
+            });
+
+            // Toggle password visibility
+            toggleBtn.addEventListener("click", () => {
+                const isPassword = passwordInput.type === "password";
+                passwordInput.type = isPassword ? "text" : "password";
+                toggleBtn.classList.toggle("fa-eye-slash");
+                toggleBtn.classList.toggle("fa-eye");
+            });
+
+            // Handle form submission
+            const form = document.getElementById("authForm");
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                // Validation for both fields (username and password) + email field for Register form
+                if (usernameInput.value.trim() === "" || passwordInput.value.trim() === "" || (isSignup && document.getElementById("email").value.trim() === "")) {
+                    alert("Please fill in all required fields.");
+                    return;
+                }
+
+                // Simulate success and redirect
+                alert(isSignup ? "Registered Successfully!" : "Logged in Successfully!");
+                window.location.href = "index.html"; // Redirect to your main project page
+            });
+
+            // Function to rebind the toggle link event listener
+            function updateToggleLink() {
+                const newToggleLink = document.getElementById("toggle-link");
+                newToggleLink.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    isSignup = !isSignup;
+                    formTitle.textContent = isSignup ? "Register" : "Login";
+                    submitBtn.textContent = isSignup ? "Register" : "Login";
+
+                    toggleText.innerHTML = isSignup
+                        ? 'Already have an account? <a href="#" id="toggle-link">Login</a>'
+                        : 'Don\'t have an account? <a href="#" id="toggle-link">Register</a>';
+
+                    // Reattach the event listener for the new "toggle-link"
+                    updateToggleLink();
+                });
+            }
+
+            // Initialize the toggle link
+            updateToggleLink();
+        });
+    </script>
+</body>
+</html>

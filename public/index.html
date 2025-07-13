@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snap2QR</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link rel="stylesheet" href="snap2qr.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div id="header">
+        <h1 id="t1">Snap<span id="span1">2</span>Qr</h1>
+        <h2 id="make"><span id="ma">Make</span> a Perfect <span id="frame">Frame</span></h2>
+    </div >
+    <h2 id="make"><span id="ma">Make</span> a Perfect <span id="frame">Frame</span></h2>
+    <input type="text" id="username" placeholder="Enter your name">
+    <video id="video" autoplay></video> 
+    <button id="snap"><i class="fa fa-camera"></i></button>
+
+    <canvas id="canvas" style="display: none;"></canvas>
+    <img id="stored-image">
+    <div id="qr-history" style="margin-top: 20px;"></div>
+</script>
+<script src="auth.js"></script>
+
+</body>
+</html>
