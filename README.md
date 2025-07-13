@@ -18,7 +18,7 @@ Snap2QR is a web-based application that allows users to:
 
 > ⚠️ `.env` is not pushed to GitHub for security reasons.
 
-## 📷 Screenshot
+
 
 *(Add a screenshot of your app here)*
 
